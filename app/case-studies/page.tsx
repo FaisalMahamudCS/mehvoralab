@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
               <Link
                 key={project.slug}
                 href={`/portfolio#${project.slug}`}
-                className="group rounded-2xl border border-white/10 bg-card p-8 transition-all hover:border-brand-blue/30 cursor-pointer"
+                className="group light-card p-8 transition-all hover:border-brand-blue/30 cursor-pointer"
               >
                 <span className="text-xs font-medium uppercase tracking-wider text-brand-cyan">
                   {project.industry}

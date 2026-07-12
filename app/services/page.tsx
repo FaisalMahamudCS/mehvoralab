@@ -40,7 +40,7 @@ export default function ServicesPage() {
                       <FadeIn key={service.id} delay={i * 0.05}>
                         <article
                           id={service.id}
-                          className="rounded-2xl border border-white/10 bg-card p-6 scroll-mt-28"
+                          className="light-card p-6 scroll-mt-28"
                         >
                           <ServiceIcon className="size-6 text-brand-cyan" />
                           <h3 className="mt-4 font-heading text-lg font-semibold">{service.title}</h3>

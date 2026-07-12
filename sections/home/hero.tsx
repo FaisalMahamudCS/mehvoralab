@@ -15,9 +15,9 @@ function HeroBackground() {
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="hero-grid absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="hero-glow-blue absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-brand-blue/20 blur-[120px]" />
-      <div className="hero-glow-cyan absolute top-1/3 right-0 h-[500px] w-[500px] rounded-full bg-brand-cyan/10 blur-[100px]" />
+      <div className="hero-grid absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="hero-glow-blue absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-brand-blue/10 blur-[120px]" />
+      <div className="hero-glow-cyan absolute top-1/3 right-0 h-[500px] w-[500px] rounded-full bg-brand-label/10 blur-[100px]" />
 
       {[
         { x: '15%', y: '25%', delay: 0 },
@@ -28,7 +28,7 @@ function HeroBackground() {
       ].map((node, i) => (
         <motion.div
           key={i}
-          className="hero-node absolute size-2 rounded-full bg-brand-cyan/60 shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+          className="hero-node absolute size-2 rounded-full bg-brand-label/70 shadow-[0_0_16px_rgba(74,127,212,0.4)]"
           style={{ left: node.x, top: node.y }}
           animate={
             reducedMotion
@@ -43,7 +43,7 @@ function HeroBackground() {
         />
       ))}
 
-      <div className="hero-code absolute right-8 top-1/3 hidden rounded-xl border border-white/10 bg-card/60 p-4 font-mono text-xs text-muted-foreground backdrop-blur-md lg:block">
+      <div className="hero-code absolute right-8 top-1/3 hidden rounded-xl border border-slate-200 bg-white p-4 font-mono text-xs text-muted-foreground shadow-sm lg:block">
         <pre className="leading-relaxed">
 {`const agent = await createAgent({
   model: "gpt-4o",
@@ -91,13 +91,13 @@ export function HeroSection() {
   )
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden pt-28 pb-20">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-background pt-28 pb-20">
       <HeroBackground />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="hero-badge mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-card/50 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm">
-            <span className="size-2 rounded-full bg-brand-cyan" />
+          <div className="hero-badge mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
+            <span className="size-2 rounded-full bg-brand-label" />
             Enterprise AI & Software Engineering
           </div>
 
@@ -126,7 +126,7 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-12 gap-2 rounded-xl border-white/15 bg-white/5 px-8 text-base backdrop-blur-sm hover:bg-white/10"
+                className="h-12 gap-2 rounded-xl border-slate-200 bg-white px-8 text-base text-brand-navy shadow-sm hover:bg-slate-50"
                 render={<Link href="/portfolio" />}
               >
                 <Play className="size-4" />
@@ -137,7 +137,7 @@ export function HeroSection() {
         </div>
 
         <div className="mx-auto mt-20 max-w-4xl">
-          <div className="grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-card/40 p-6 backdrop-blur-md sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_4px_24px_rgba(15,23,42,0.06)] sm:grid-cols-4">
             {[
               { label: 'Projects', value: '50+' },
               { label: 'Engineers', value: '15+' },

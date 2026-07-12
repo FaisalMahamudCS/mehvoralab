@@ -64,7 +64,7 @@ export function StatsSection() {
           {COMPANY_STATS.map((stat) => (
             <div
               key={stat.label}
-              className="stats-card group rounded-2xl border border-white/10 bg-card p-8 transition-all duration-300 hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/5 cursor-default"
+              className="stats-card group light-card p-8 transition-all duration-300 hover:border-brand-blue/30 hover:shadow-lg hover:shadow-brand-blue/10 cursor-default"
             >
               <p className="font-heading text-4xl font-bold text-foreground lg:text-5xl">
                 <GsapCounter value={stat.value} suffix={stat.suffix} />

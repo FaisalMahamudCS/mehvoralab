@@ -32,7 +32,7 @@ export default function TermsPage() {
             <h2 className="font-heading text-xl font-semibold text-foreground">Contact</h2>
             <p>
               Questions about these terms? Reach us at{' '}
-              <a href={`mailto:${COMPANY.email}`} className="text-brand-cyan hover:underline cursor-pointer">
+              <a href={`mailto:${COMPANY.email}`} className="text-brand-label hover:underline cursor-pointer">
                 {COMPANY.email}
               </a>
               .

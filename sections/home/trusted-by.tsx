@@ -26,7 +26,7 @@ export function TrustedBySection() {
   )
 
   return (
-    <section ref={sectionRef} className="border-y border-white/10 bg-surface/50 py-12 overflow-hidden">
+    <section ref={sectionRef} className="light-section-alt py-12 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p className="mb-8 text-center text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
           Trusted by innovative teams worldwide

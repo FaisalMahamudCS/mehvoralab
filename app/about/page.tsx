@@ -37,7 +37,7 @@ export default function AboutPage() {
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="rounded-2xl border border-white/10 bg-card p-8">
+              <div className="light-card p-8">
                 <h3 className="font-heading text-lg font-semibold">Key Achievements</h3>
                 <ul className="mt-6 space-y-4">
                   {[

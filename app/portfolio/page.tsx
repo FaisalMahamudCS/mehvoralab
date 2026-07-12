@@ -25,15 +25,15 @@ export default function PortfolioPage() {
               <FadeIn key={project.slug} delay={i * 0.05}>
                 <article
                   id={project.slug}
-                  className="scroll-mt-28 rounded-2xl border border-white/10 bg-card overflow-hidden"
+                  className="scroll-mt-28 light-card overflow-hidden"
                 >
-                  <div className="border-b border-white/10 p-8">
+                  <div className="border-b border-slate-200/80 p-8">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="rounded-md bg-brand-blue/10 px-2 py-0.5 text-xs font-medium text-brand-cyan">
                         {project.industry}
                       </span>
                       {project.featured && (
-                        <span className="rounded-md bg-white/5 px-2 py-0.5 text-xs text-muted-foreground">
+                        <span className="rounded-md bg-slate-100 px-2 py-0.5 text-xs text-muted-foreground">
                           Featured
                         </span>
                       )}
@@ -76,7 +76,7 @@ export default function PortfolioPage() {
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-xs"
+                            className="rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs"
                           >
                             {t}
                           </span>

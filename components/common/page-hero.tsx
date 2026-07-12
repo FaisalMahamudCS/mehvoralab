@@ -8,11 +8,11 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description }: PageHeroProps) {
   return (
-    <section className="border-b border-white/10 bg-surface/30 pt-32 pb-16">
+    <section className="border-b border-slate-200/60 bg-white pt-32 pb-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn className="max-w-3xl">
           {eyebrow && (
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-brand-cyan">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-brand-label">
               {eyebrow}
             </p>
           )}

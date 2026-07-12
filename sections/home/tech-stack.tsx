@@ -78,7 +78,7 @@ export function TechStackSection() {
         </div>
 
         <div className="relative mx-auto mt-16 flex min-h-[420px] max-w-3xl items-center justify-center">
-          <div className="relative z-10 flex size-28 items-center justify-center rounded-full border border-brand-blue/30 bg-card shadow-[0_0_60px_rgba(37,99,235,0.2)]">
+          <div className="relative z-10 flex size-28 items-center justify-center rounded-full border border-brand-blue/20 bg-white shadow-[0_4px_24px_rgba(37,99,235,0.12)]">
             <span className="font-heading text-sm font-bold text-foreground">Mehvora</span>
           </div>
 
@@ -103,7 +103,7 @@ export function TechStackSection() {
                   transition={{ duration: 0.2 }}
                 >
                   <div
-                    className={`rounded-lg border border-white/10 bg-card/80 px-3 py-1.5 text-xs font-medium backdrop-blur-sm ${CATEGORY_COLORS[tech.category] ?? 'text-foreground'}`}
+                    className={`rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium shadow-sm ${CATEGORY_COLORS[tech.category] ?? 'text-brand-navy'}`}
                   >
                     {tech.name}
                   </div>
@@ -117,7 +117,7 @@ export function TechStackSection() {
           {TECH_STACK.map((tech) => (
             <span
               key={tech.name}
-              className="rounded-lg border border-white/10 bg-card px-3 py-1.5 text-xs text-muted-foreground"
+              className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-muted-foreground shadow-sm"
             >
               {tech.name}
             </span>

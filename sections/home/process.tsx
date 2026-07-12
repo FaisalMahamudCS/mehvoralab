@@ -72,13 +72,13 @@ export function ProcessSection() {
         />
 
         <div className="process-timeline relative mt-16">
-          <div className="process-line absolute left-8 top-0 hidden h-full w-px bg-gradient-to-b from-brand-blue via-brand-cyan to-transparent lg:block" />
+          <div className="process-line absolute left-8 top-0 hidden h-full w-px bg-gradient-to-b from-brand-blue via-brand-label to-transparent lg:block" />
 
           <div className="space-y-6">
             {PROCESS_STEPS.map((step) => (
               <div
                 key={step.step}
-                className="process-step group relative flex gap-6 rounded-2xl border border-white/10 bg-card/50 p-6 transition-all duration-300 hover:border-brand-blue/30 hover:bg-card lg:pl-16"
+                className="process-step group relative flex gap-6 light-card p-6 transition-all duration-300 hover:border-brand-blue/30 lg:pl-16"
               >
                 <div className="process-dot absolute left-6 top-8 hidden size-4 rounded-full border-2 border-brand-blue bg-background lg:block" />
                 <span className="font-heading text-3xl font-bold text-brand-blue/40">{step.step}</span>

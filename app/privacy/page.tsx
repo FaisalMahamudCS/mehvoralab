@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <>
       <PageHero title="Privacy Policy" />
       <section className="py-16">
-        <div className="prose prose-invert mx-auto max-w-3xl px-4 sm:px-6">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
           <p className="text-muted-foreground">Last updated: July 2026</p>
           <div className="mt-8 space-y-6 text-muted-foreground">
             <p>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             <h2 className="font-heading text-xl font-semibold text-foreground">Contact</h2>
             <p>
               For privacy-related questions, contact us at{' '}
-              <a href={`mailto:${COMPANY.email}`} className="text-brand-cyan hover:underline cursor-pointer">
+              <a href={`mailto:${COMPANY.email}`} className="text-brand-label hover:underline cursor-pointer">
                 {COMPANY.email}
               </a>
               .

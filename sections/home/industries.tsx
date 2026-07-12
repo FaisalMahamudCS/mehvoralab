@@ -37,7 +37,7 @@ export function IndustriesSection() {
   )
 
   return (
-    <section ref={sectionRef} className="border-y border-white/10 bg-surface/30 py-24">
+    <section ref={sectionRef} className="light-section-alt py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Industries"
@@ -49,7 +49,7 @@ export function IndustriesSection() {
           {INDUSTRIES.map((industry) => (
             <div
               key={industry.name}
-              className="industry-card group rounded-2xl border border-white/10 bg-card/60 p-5 backdrop-blur-sm transition-all duration-300 hover:border-brand-cyan/30 hover:bg-card cursor-pointer"
+              className="industry-card group rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-300 hover:border-brand-label/40 hover:shadow-md cursor-pointer"
             >
               <h3 className="font-heading text-sm font-semibold text-foreground">{industry.name}</h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">

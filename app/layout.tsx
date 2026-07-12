@@ -22,8 +22,8 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = createMetadata({})
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#030712',
+  colorScheme: 'light',
+  themeColor: '#f8fafc',
 }
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} dark scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"

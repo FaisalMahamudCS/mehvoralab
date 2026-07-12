@@ -45,9 +45,9 @@ export function CtaSection() {
   return (
     <section ref={sectionRef} className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="cta-card relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-blue/20 via-card to-brand-cyan/10 p-10 text-center sm:p-16">
-          <div className="cta-glow pointer-events-none absolute -right-20 -top-20 size-60 rounded-full bg-brand-blue/20 blur-[80px]" />
-          <div className="cta-glow pointer-events-none absolute -bottom-20 -left-20 size-60 rounded-full bg-brand-cyan/10 blur-[80px]" />
+        <div className="cta-card relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-brand-blue/5 via-white to-brand-label/5 p-10 text-center shadow-[0_4px_32px_rgba(15,23,42,0.06)] sm:p-16">
+          <div className="cta-glow pointer-events-none absolute -right-20 -top-20 size-60 rounded-full bg-brand-blue/10 blur-[80px]" />
+          <div className="cta-glow pointer-events-none absolute -bottom-20 -left-20 size-60 rounded-full bg-brand-label/10 blur-[80px]" />
 
           <h2 className="relative font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Ready to build something exceptional?
@@ -70,7 +70,7 @@ export function CtaSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="h-12 rounded-xl border-white/15 bg-white/5 px-8 backdrop-blur-sm hover:bg-white/10"
+                className="h-12 rounded-xl border-slate-200 bg-white px-8 shadow-sm hover:bg-slate-50"
                 render={<Link href="/portfolio" />}
               >
                 View Portfolio

@@ -15,8 +15,8 @@ export type TeamMember = {
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: 'mehvira',
-    name: 'Mehvira',
+    id: 'mehvora',
+    name: 'Naeema Jannat Meherunnessa',
     role: 'Co-Founder & Director',
     title: 'CO-FOUNDER',
     subtitle: 'Director · Web Development',

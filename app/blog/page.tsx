@@ -48,7 +48,7 @@ export default function BlogPage() {
             {BLOG_POSTS.map((post) => (
               <article
                 key={post.slug}
-                className="group rounded-2xl border border-white/10 bg-card p-6 transition-all hover:border-brand-blue/30"
+                className="group light-card p-6 transition-all hover:border-brand-blue/30"
               >
                 <time className="text-xs text-muted-foreground">{post.date}</time>
                 <h2 className="mt-3 font-heading text-lg font-semibold group-hover:text-brand-cyan transition-colors">

@@ -65,9 +65,9 @@ export function ServicesSection() {
             return (
               <div
                 key={service.id}
-                className="service-card group relative flex h-full flex-col rounded-2xl border border-white/10 bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5 cursor-pointer"
+                className="service-card group relative flex h-full flex-col light-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/10 cursor-pointer"
               >
-                <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-cyan transition-colors duration-300 group-hover:bg-brand-blue/20">
+                  <div className="mb-4 flex size-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-label transition-colors duration-300 group-hover:bg-brand-blue/15">
                   <Icon className="size-6" />
                 </div>
                 <h3 className="font-heading text-lg font-semibold text-foreground">{service.title}</h3>
@@ -76,7 +76,7 @@ export function ServicesSection() {
                 </p>
                 <Link
                   href={`/services#${service.id}`}
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-cyan transition-colors hover:text-foreground cursor-pointer"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-label transition-colors hover:text-brand-navy cursor-pointer"
                 >
                   Learn more
                   <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -40,7 +40,7 @@ export default function CareersPage() {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 rounded-2xl border border-white/10 bg-card p-8">
+          <div className="mb-12 light-card p-8">
             <h2 className="font-heading text-xl font-bold">Why Mehvora Labs?</h2>
             <ul className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
@@ -62,7 +62,7 @@ export default function CareersPage() {
             {OPEN_ROLES.map((role) => (
               <div
                 key={role.title}
-                className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-card p-6 sm:flex-row sm:items-center sm:justify-between"
+                className="flex flex-col gap-4 light-card p-6 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
                   <h3 className="font-heading font-semibold">{role.title}</h3>

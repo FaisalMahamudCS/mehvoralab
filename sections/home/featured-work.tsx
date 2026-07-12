@@ -40,7 +40,7 @@ export function FeaturedWorkSection() {
   )
 
   return (
-    <section ref={sectionRef} className="border-t border-white/10 bg-surface/20 py-24" id="work">
+    <section ref={sectionRef} className="light-section-alt py-24" id="work">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Portfolio"
@@ -52,12 +52,12 @@ export function FeaturedWorkSection() {
           {featured.map((project) => (
             <article
               key={project.slug}
-              className="work-card group flex h-full flex-col rounded-2xl border border-white/10 bg-card overflow-hidden transition-all duration-300 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/5"
+              className="work-card group flex h-full flex-col overflow-hidden light-card transition-all duration-300 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/10"
             >
-              <div className="border-b border-white/10 bg-gradient-to-br from-brand-blue/10 to-brand-cyan/5 p-8">
+              <div className="border-b border-slate-200/80 bg-gradient-to-br from-brand-blue/5 to-brand-label/5 p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="text-xs font-medium uppercase tracking-wider text-brand-cyan">
+                    <span className="text-xs font-medium uppercase tracking-wider text-brand-label">
                       {project.industry}
                     </span>
                     <h3 className="mt-2 font-heading text-xl font-bold text-foreground sm:text-2xl">
@@ -66,7 +66,7 @@ export function FeaturedWorkSection() {
                   </div>
                   <Link
                     href={`/portfolio#${project.slug}`}
-                    className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-muted-foreground transition-all hover:border-brand-blue/40 hover:text-foreground cursor-pointer"
+                    className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-muted-foreground transition-all hover:border-brand-blue/40 hover:text-brand-navy cursor-pointer"
                     aria-label={`View ${project.title}`}
                   >
                     <ArrowUpRight className="size-4" />
@@ -90,7 +90,7 @@ export function FeaturedWorkSection() {
                 <ul className="mt-6 flex-1 space-y-2">
                   {project.impact.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-cyan" />
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-label" />
                       {item}
                     </li>
                   ))}
@@ -100,7 +100,7 @@ export function FeaturedWorkSection() {
                   {project.tech.slice(0, 5).map((t) => (
                     <span
                       key={t}
-                      className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-xs text-muted-foreground"
+                      className="rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs text-muted-foreground"
                     >
                       {t}
                     </span>
@@ -114,7 +114,7 @@ export function FeaturedWorkSection() {
         <div className="mt-12 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-foreground transition-all hover:bg-white/10 cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-brand-navy shadow-sm transition-all hover:bg-slate-50 cursor-pointer"
           >
             View all projects
             <ArrowUpRight className="size-4" />

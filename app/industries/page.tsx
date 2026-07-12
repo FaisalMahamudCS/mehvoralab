@@ -23,7 +23,7 @@ export default function IndustriesPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {INDUSTRIES.map((industry, i) => (
               <FadeIn key={industry.name} delay={i * 0.05}>
-                <div className="rounded-2xl border border-white/10 bg-card p-8">
+                <div className="light-card p-8">
                   <h2 className="font-heading text-xl font-bold">{industry.name}</h2>
                   <p className="mt-3 leading-relaxed text-muted-foreground">{industry.description}</p>
                 </div>

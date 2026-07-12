@@ -21,7 +21,6 @@ export function Header() {
   useGSAP(
     () => {
       if (reducedMotion || !navRef.current) return
-
       gsap.fromTo(
         navRef.current,
         { y: -24, opacity: 0 },
@@ -40,10 +39,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-        scrolled ? 'py-3' : 'py-5'
-      )}
+      className={cn('fixed inset-x-0 top-0 z-50 transition-all duration-300', scrolled ? 'py-3' : 'py-5')}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav
@@ -51,8 +47,8 @@ export function Header() {
           className={cn(
             'flex items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-300 sm:px-6',
             scrolled
-              ? 'border-white/10 bg-surface/80 shadow-lg shadow-black/20 backdrop-blur-xl'
-              : 'border-transparent bg-transparent'
+              ? 'border-slate-200/80 bg-white/90 shadow-[0_4px_24px_rgba(15,23,42,0.08)] backdrop-blur-xl'
+              : 'border-transparent bg-white/70 shadow-[0_2px_16px_rgba(15,23,42,0.04)] backdrop-blur-md'
           )}
           style={reducedMotion ? undefined : { opacity: 0 }}
         >
@@ -64,8 +60,8 @@ export function Header() {
               height={36}
               className="transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-heading text-lg font-semibold tracking-tight text-foreground">
-              {COMPANY.name}
+            <span className="font-heading text-lg font-semibold tracking-tight text-brand-navy lowercase">
+              mehvora labs
             </span>
           </Link>
 
@@ -74,7 +70,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors duration-200 hover:bg-white/5 hover:text-foreground cursor-pointer"
+                className="rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors duration-200 hover:bg-slate-100 hover:text-brand-navy cursor-pointer"
               >
                 {link.label}
               </Link>
@@ -87,7 +83,7 @@ export function Header() {
             </Button>
             <Button
               size="sm"
-              className="bg-brand-blue text-white hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/25"
+              className="bg-brand-blue text-white hover:bg-brand-blue/90 shadow-md shadow-brand-blue/20"
               render={<Link href="/contact" />}
             >
               Book Discovery Call
@@ -98,21 +94,21 @@ export function Header() {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-foreground lg:hidden cursor-pointer"
+            className="flex size-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-brand-navy lg:hidden cursor-pointer"
           >
             {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </nav>
 
         {mobileOpen && (
-          <div className="mt-3 rounded-2xl border border-white/10 bg-surface/95 p-4 shadow-xl backdrop-blur-xl lg:hidden">
+          <div className="mt-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl lg:hidden">
             <div className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground cursor-pointer"
+                  className="rounded-xl px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-slate-100 hover:text-brand-navy cursor-pointer"
                 >
                   {link.label}
                 </Link>

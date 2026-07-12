@@ -26,7 +26,7 @@ export default function SolutionsPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {INDUSTRIES.map((industry, i) => (
               <FadeIn key={industry.name} delay={i * 0.05}>
-                <div className="rounded-2xl border border-white/10 bg-card p-6">
+                <div className="light-card p-6">
                   <h3 className="font-heading text-lg font-semibold">{industry.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{industry.description}</p>
                 </div>
@@ -40,7 +40,7 @@ export default function SolutionsPage() {
               {SERVICES.slice(0, 6).map((service) => (
                 <div
                   key={service.id}
-                  className="flex items-center justify-between rounded-xl border border-white/10 bg-card/50 px-5 py-4"
+                  className="flex items-center justify-between rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-sm"
                 >
                   <span className="text-sm font-medium">{service.title}</span>
                   <Link href={`/services#${service.id}`} className="text-brand-cyan cursor-pointer">

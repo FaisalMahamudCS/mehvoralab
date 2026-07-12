@@ -34,7 +34,7 @@ export function TestimonialsSection() {
   )
 
   return (
-    <section ref={sectionRef} className="border-y border-white/10 bg-surface/30 py-24">
+    <section ref={sectionRef} className="light-section-alt py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Testimonials"
@@ -42,7 +42,7 @@ export function TestimonialsSection() {
           description="What our clients say about working with Mehvora Labs."
         />
 
-        <div className="testimonial-card relative mx-auto mt-16 max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-card/60 backdrop-blur-md">
+        <div className="testimonial-card relative mx-auto mt-16 max-w-3xl overflow-hidden light-card">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -67,7 +67,7 @@ export function TestimonialsSection() {
                   <button
                     type="button"
                     onClick={() => setActive((a) => (a === 0 ? TESTIMONIALS.length - 1 : a - 1))}
-                    className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10 cursor-pointer"
+                    className="flex size-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 transition-colors hover:bg-slate-100 cursor-pointer"
                     aria-label="Previous testimonial"
                   >
                     <ChevronLeft className="size-4" />
@@ -75,7 +75,7 @@ export function TestimonialsSection() {
                   <button
                     type="button"
                     onClick={() => setActive((a) => (a === TESTIMONIALS.length - 1 ? 0 : a + 1))}
-                    className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-colors hover:bg-white/10 cursor-pointer"
+                    className="flex size-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 transition-colors hover:bg-slate-100 cursor-pointer"
                     aria-label="Next testimonial"
                   >
                     <ChevronRight className="size-4" />

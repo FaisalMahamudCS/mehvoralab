@@ -44,7 +44,7 @@ export function ContactForm() {
           <input
             id="name"
             {...register('name')}
-            className="w-full rounded-xl border border-white/10 bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
+            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
             placeholder="Your name"
           />
           {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name.message}</p>}
@@ -57,7 +57,7 @@ export function ContactForm() {
             id="email"
             type="email"
             {...register('email')}
-            className="w-full rounded-xl border border-white/10 bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
+            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
             placeholder="you@company.com"
           />
           {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
@@ -70,7 +70,7 @@ export function ContactForm() {
         <input
           id="company"
           {...register('company')}
-          className="w-full rounded-xl border border-white/10 bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
           placeholder="Your company (optional)"
         />
       </div>
@@ -82,7 +82,7 @@ export function ContactForm() {
           id="message"
           rows={5}
           {...register('message')}
-          className="w-full resize-none rounded-xl border border-white/10 bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
+          className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-brand-blue/50"
           placeholder="Tell us about your project..."
         />
         {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message.message}</p>}
@@ -110,14 +110,14 @@ export function ContactPageContent() {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
           <FadeIn>
-            <div className="rounded-2xl border border-white/10 bg-card p-8">
+            <div className="light-card p-8">
               <ContactForm />
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
             <div className="space-y-8">
-              <div className="rounded-2xl border border-white/10 bg-card p-8">
+              <div className="light-card p-8">
                 <h3 className="font-heading text-lg font-semibold">Contact Information</h3>
                 <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
                   <li className="flex items-start gap-3">
@@ -139,14 +139,14 @@ export function ContactPageContent() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-dashed border-white/15 bg-surface/50 p-8 text-center">
+              <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-8 text-center">
                 <p className="text-sm font-medium text-foreground">Schedule a Call</p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Calendly integration placeholder — connect your scheduling link here.
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-dashed border-white/15 bg-surface/50 p-8 text-center">
+              <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-8 text-center">
                 <p className="text-sm font-medium text-foreground">Office Location</p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Google Maps embed placeholder — Dhaka, Bangladesh
