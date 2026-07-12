@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { useGSAP, gsap, ScrollTrigger } from '@/lib/gsap'
 import { TEAM_MEMBERS } from '@/constants/team'
+import { SectionHeader } from '@/components/common/section-header'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -24,54 +25,49 @@ function GitHubIcon({ className }: { className?: string }) {
 
 function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[0]; reversed?: boolean }) {
   return (
-    <article
-      className="team-card group relative overflow-hidden rounded-[28px] bg-gradient-to-br from-white via-white to-slate-50/80 shadow-[0_4px_32px_rgba(15,23,42,0.07)] ring-1 ring-slate-200/60"
-    >
-      {/* Watermark logo — matches mockup */}
+    <article className="team-card group relative overflow-hidden rounded-2xl border border-white/10 bg-card shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all duration-300 hover:border-brand-blue/30 hover:shadow-brand-blue/10">
+      {/* Subtle glow */}
+      <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-brand-blue/10 blur-[80px]" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 size-48 rounded-full bg-brand-cyan/5 blur-[60px]" />
+
+      {/* Watermark */}
       <div
-        className={`pointer-events-none absolute top-6 z-10 flex items-center gap-2 opacity-[0.12] ${
-          reversed ? 'left-6 lg:left-8' : 'right-6 lg:right-8'
+        className={`pointer-events-none absolute top-5 z-10 flex items-center gap-2 opacity-[0.07] ${
+          reversed ? 'left-5' : 'right-5'
         }`}
         aria-hidden
       >
-        <Image src="/mehvora-labs-logo.svg" alt="" width={48} height={48} className="opacity-80" />
-        <span className="font-heading text-sm font-bold lowercase tracking-tight text-[#1e3a5f]">
+        <Image src="/mehvora-labs-logo.svg" alt="" width={40} height={40} />
+        <span className="font-heading text-xs font-bold lowercase tracking-tight text-foreground">
           mehvora labs
         </span>
       </div>
 
-      <div className={`grid lg:grid-cols-[1fr_1.05fr] ${reversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-        {/* Text panel */}
-        <div className="relative z-20 flex flex-col justify-center px-8 py-12 sm:px-12 sm:py-16 lg:px-14 lg:py-20">
-          {/* Soft fade into photo */}
-          <div
-            className={`pointer-events-none absolute inset-y-0 w-32 bg-gradient-to-r from-white to-transparent ${
-              reversed ? 'left-full -translate-x-full rotate-180' : 'left-full'
-            } hidden lg:block`}
-          />
-
-          <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#4a7fd4]">
+      <div className={`relative grid lg:grid-cols-2 ${reversed ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+        {/* Text */}
+        <div className="relative z-10 flex flex-col justify-center px-8 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-cyan">
             {member.title}
           </p>
-          <h3 className="mt-5 font-heading text-[2.5rem] font-bold leading-tight tracking-tight text-[#1a2b4a] sm:text-5xl lg:text-[3.25rem]">
+          <h3 className="mt-4 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             {member.name}
           </h3>
           {member.subtitle && (
-            <p className="mt-2 text-sm font-medium text-[#64748b]">{member.subtitle}</p>
+            <p className="mt-2 text-sm font-medium text-brand-blue">{member.subtitle}</p>
           )}
-          <p className="mt-6 max-w-md text-[15px] leading-[1.75] text-[#475569]">
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
             {member.bio}
           </p>
 
           {(member.social?.linkedin || member.social?.github) && (
-            <div className="mt-10 flex gap-3">
+            <div className="mt-8 flex gap-3">
               {member.social.linkedin && (
                 <a
                   href={member.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name} on LinkedIn`}
-                  className="flex size-10 items-center justify-center rounded-lg bg-[#0A66C2] text-white shadow-sm transition-transform duration-200 hover:scale-105 cursor-pointer"
+                  className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-muted-foreground transition-all duration-200 hover:border-[#0A66C2]/50 hover:bg-[#0A66C2] hover:text-white cursor-pointer"
                 >
                   <LinkedInIcon className="size-[18px]" />
                 </a>
@@ -82,7 +78,7 @@ function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name} on GitHub`}
-                  className="flex size-10 items-center justify-center rounded-lg bg-[#1a1a1a] text-white shadow-sm transition-transform duration-200 hover:scale-105 cursor-pointer"
+                  className="flex size-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-muted-foreground transition-all duration-200 hover:border-white/20 hover:bg-white/10 hover:text-foreground cursor-pointer"
                 >
                   <GitHubIcon className="size-[18px]" />
                 </a>
@@ -91,24 +87,19 @@ function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[
           )}
         </div>
 
-        {/* Photo panel — full color, seamless edge */}
-        <div
-          className={`relative min-h-[340px] sm:min-h-[400px] lg:min-h-[480px] ${
-            member.id === 'faisal'
-              ? 'bg-gradient-to-br from-white via-slate-50 to-slate-100'
-              : 'bg-[#f1f5f9]'
-          }`}
-        >
+        {/* Photo — full color */}
+        <div className="relative min-h-[300px] overflow-hidden bg-surface sm:min-h-[360px] lg:min-h-[420px]">
+          <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent z-10 pointer-events-none lg:bg-gradient-to-r lg:from-card/60 lg:via-transparent lg:to-transparent" />
           <Image
             src={member.image}
             alt={`${member.name}, ${member.role} at Mehvora Labs`}
             fill
-            className={`transition-transform duration-700 group-hover:scale-[1.015] ${
+            className={`transition-transform duration-700 group-hover:scale-[1.03] ${
               member.id === 'faisal'
-                ? 'object-contain object-bottom p-6 sm:p-8'
+                ? 'object-contain object-bottom p-4 sm:p-6'
                 : 'object-cover object-center'
             }`}
-            sizes="(max-width: 1024px) 100vw, 55vw"
+            sizes="(max-width: 1024px) 100vw, 50vw"
             priority={member.id === 'mehvira'}
           />
         </div>
@@ -162,22 +153,18 @@ export function TeamSection() {
     <section
       ref={sectionRef}
       id="team"
-      className="scroll-mt-28 bg-[#f8fafc] py-24 sm:py-28"
+      className="scroll-mt-28 border-y border-white/10 bg-background py-24"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="team-header mx-auto max-w-2xl text-center">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#4a7fd4]">
-            Our Team
-          </p>
-          <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-[#1a2b4a] sm:text-4xl">
-            Meet the leadership
-          </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-[#64748b]">
-            The founders building Mehvora Labs with engineering depth and creative vision.
-          </p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="team-header">
+          <SectionHeader
+            eyebrow="Our Team"
+            title="Meet the leadership"
+            description="The founders building Mehvora Labs with engineering depth and creative vision."
+          />
         </div>
 
-        <div className="mt-14 space-y-8">
+        <div className="mt-16 space-y-8">
           {TEAM_MEMBERS.filter((m) => m.featured).map((member, i) => (
             <TeamCard key={member.id} member={member} reversed={i % 2 === 1} />
           ))}
