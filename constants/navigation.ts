@@ -2,7 +2,7 @@ export const NAV_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Industries', href: '/industries' },
+  { label: 'Our Team', href: '/#team' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
   { label: 'Careers', href: '/careers' },
@@ -11,6 +11,7 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   company: [
     { label: 'About', href: '/about' },
+    { label: 'Our Team', href: '/#team' },
     { label: 'Careers', href: '/careers' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },

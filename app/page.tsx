@@ -6,6 +6,7 @@ import { IndustriesSection } from '@/sections/home/industries'
 import { TechStackSection } from '@/sections/home/tech-stack'
 import { FeaturedWorkSection } from '@/sections/home/featured-work'
 import { ProcessSection } from '@/sections/home/process'
+import { TeamSection } from '@/sections/home/team'
 import { TestimonialsSection } from '@/sections/home/testimonials'
 import { CtaSection } from '@/sections/home/cta'
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <TechStackSection />
       <FeaturedWorkSection />
       <ProcessSection />
+      <TeamSection />
       <TestimonialsSection />
       <CtaSection />
     </>
