@@ -1,0 +1,28 @@
+<svg width="180" height="180" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#10b981" />
+      <stop offset="100%" stopColor="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="logoGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#059669" />
+      <stop offset="100%" stopColor="#0891b2" />
+    </linearGradient>
+  </defs>
+  <style>
+    @media (prefers-color-scheme: light) {
+      .background { fill: #0f0f0f; }
+      .logo-stroke { stroke: url(#logoGradLight); }
+    }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #ffffff; }
+      .logo-stroke { stroke: url(#logoGradDark); }
+    }
+  </style>
+  <rect class="background" width="200" height="200" rx="40" />
+  <g style="transform: scale(85%); transform-origin: center">
+    <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" class="logo-stroke" strokeWidth="8" strokeLinejoin="round" fill="none" />
+    <path d="M 65 140 L 65 75 L 115 125 L 115 80" class="logo-stroke" strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M 140 85 L 140 145 L 85 145 L 85 110 L 115 110" class="logo-stroke" strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </g>
+</svg>
