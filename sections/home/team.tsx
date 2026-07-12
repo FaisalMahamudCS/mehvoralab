@@ -6,6 +6,24 @@ import { useGSAP, gsap, ScrollTrigger } from '@/lib/gsap'
 import { TEAM_MEMBERS } from '@/constants/team'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
 
+function GlobeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+    </svg>
+  )
+}
+
+function MailIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="M22 7l-10 7L2 7" />
+    </svg>
+  )
+}
+
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -58,8 +76,31 @@ function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[
             {member.bio}
           </p>
 
-          {(member.social?.linkedin || member.social?.github) && (
-            <div className="mt-10 flex gap-3">
+          {(member.social?.linkedin ||
+            member.social?.github ||
+            member.social?.portfolio ||
+            member.social?.email) && (
+            <div className="mt-10 flex flex-wrap gap-3">
+              {member.social.portfolio && (
+                <a
+                  href={member.social.portfolio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} portfolio`}
+                  className="flex size-10 items-center justify-center rounded-lg bg-brand-blue text-white shadow-sm transition-transform duration-200 hover:scale-105 cursor-pointer"
+                >
+                  <GlobeIcon className="size-[18px]" />
+                </a>
+              )}
+              {member.social.email && (
+                <a
+                  href={`mailto:${member.social.email}`}
+                  aria-label={`Email ${member.name}`}
+                  className="flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-[#1a2b4a] shadow-sm transition-transform duration-200 hover:scale-105 cursor-pointer"
+                >
+                  <MailIcon className="size-[18px]" />
+                </a>
+              )}
               {member.social.linkedin && (
                 <a
                   href={member.social.linkedin}
@@ -103,7 +144,7 @@ function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[
                 : 'object-cover object-center'
             }`}
             sizes="(max-width: 1024px) 100vw, 55vw"
-            priority={member.id === 'mehvira'}
+            priority={member.id === 'mehvora'}
           />
         </div>
       </div>

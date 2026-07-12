@@ -1,6 +1,7 @@
-import { PROJECTS } from '@/constants/projects'
+import { PROJECTS, PORTFOLIO_SHOWREEL } from '@/constants/projects'
 import { createMetadata } from '@/lib/seo'
 import { PageHero } from '@/components/common/page-hero'
+import { ProjectVideo } from '@/components/common/project-video'
 import { FadeIn } from '@/components/animations/fade-in'
 
 export const metadata = createMetadata({
@@ -17,6 +18,24 @@ export default function PortfolioPage() {
         title="Projects that drive real impact"
         description="A selection of production systems we've designed, built, and deployed for clients worldwide."
       />
+
+      <section className="border-b border-slate-200/80 py-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-brand-label">
+              Showreel
+            </p>
+            <h2 className="mt-3 text-center font-heading text-2xl font-bold text-foreground">
+              Production systems in action
+            </h2>
+            <ProjectVideo
+              src={PORTFOLIO_SHOWREEL}
+              title="Mehvora Labs portfolio showreel"
+              className="mt-8"
+            />
+          </FadeIn>
+        </div>
+      </section>
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,6 +59,13 @@ export default function PortfolioPage() {
                     </div>
                     <h2 className="mt-4 font-heading text-2xl font-bold">{project.title}</h2>
                     <p className="mt-3 max-w-3xl text-muted-foreground">{project.description}</p>
+                    {project.video && (
+                      <ProjectVideo
+                        src={project.video}
+                        title={project.title}
+                        className="mt-6 max-w-3xl"
+                      />
+                    )}
                   </div>
                   <div className="grid gap-8 p-8 lg:grid-cols-3">
                     <div>

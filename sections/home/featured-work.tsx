@@ -6,6 +6,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { useGSAP, gsap, ScrollTrigger } from '@/lib/gsap'
 import { PROJECTS } from '@/constants/projects'
 import { SectionHeader } from '@/components/common/section-header'
+import { ProjectVideo } from '@/components/common/project-video'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
 
 const featured = PROJECTS.filter((p) => p.featured)
@@ -54,6 +55,13 @@ export function FeaturedWorkSection() {
               key={project.slug}
               className="work-card group flex h-full flex-col overflow-hidden light-card transition-all duration-300 hover:border-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/10"
             >
+              {project.video && (
+                <ProjectVideo
+                  src={project.video}
+                  title={project.title}
+                  className="border-b border-slate-200/80 p-4 pb-0"
+                />
+              )}
               <div className="border-b border-slate-200/80 bg-gradient-to-br from-brand-blue/5 to-brand-label/5 p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div>
