@@ -1,22 +1,26 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Geist, Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
 import { SmoothScroll } from '@/components/layout/smooth-scroll'
 import { createMetadata, organizationJsonLd } from '@/lib/seo'
 import './globals.css'
 
-const inter = Inter({
-  variable: '--font-inter',
+const geist = Geist({
+  variable: '--font-geist',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
 })
 
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+})
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: '--font-plus-jakarta',
+  subsets: ['latin'],
+  weight: ['500', '600', '700', '800'],
 })
 
 export const metadata: Metadata = createMetadata({})
@@ -32,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} ${plusJakarta.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
