@@ -105,13 +105,15 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               Tell me what you&apos;re building. I reply to every enquiry within 24 hours.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href={COMPANY.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded-xl bg-brand-blue px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-blue/90 cursor-pointer"
             >
               Book a call
               <ArrowRight className="size-4" />
-            </Link>
+            </a>
           </div>
         </div>
 

@@ -3,10 +3,11 @@
 type ProjectVideoProps = {
   src: string
   title: string
+  poster?: string
   className?: string
 }
 
-export function ProjectVideo({ src, title, className }: ProjectVideoProps) {
+export function ProjectVideo({ src, title, poster, className }: ProjectVideoProps) {
   return (
     <div className={className}>
       <video
@@ -14,6 +15,7 @@ export function ProjectVideo({ src, title, className }: ProjectVideoProps) {
         controls
         playsInline
         preload="metadata"
+        poster={poster}
         aria-label={`${title} demo video`}
       >
         <source src={src} type="video/mp4" />

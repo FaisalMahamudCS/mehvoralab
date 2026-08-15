@@ -84,7 +84,7 @@ export function Header() {
             <Button
               size="sm"
               className="bg-brand-blue text-white hover:bg-brand-blue/90 shadow-md shadow-brand-blue/20"
-              render={<Link href="/contact" />}
+              render={<a href={COMPANY.calendly} target="_blank" rel="noopener noreferrer" />}
             >
               Book Discovery Call
             </Button>
@@ -113,13 +113,15 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
+              <a
+                href={COMPANY.calendly}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 rounded-xl bg-brand-blue px-4 py-3 text-center text-sm font-medium text-white cursor-pointer"
               >
                 Book Discovery Call
-              </Link>
+              </a>
             </div>
           </div>
         )}

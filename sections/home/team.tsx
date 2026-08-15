@@ -129,9 +129,7 @@ function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[
 
         <div
           className={`relative min-h-[340px] sm:min-h-[400px] lg:min-h-[480px] ${
-            member.id === 'faisal'
-              ? 'bg-gradient-to-br from-white via-slate-50 to-slate-100'
-              : 'bg-[#f1f5f9]'
+            member.id === 'faisal' ? 'bg-[#0b0d12]' : 'bg-[#e8eef6]'
           }`}
         >
           <Image
@@ -140,11 +138,11 @@ function TeamCard({ member, reversed = false }: { member: (typeof TEAM_MEMBERS)[
             fill
             className={`transition-transform duration-700 group-hover:scale-[1.015] ${
               member.id === 'faisal'
-                ? 'object-contain object-bottom p-6 sm:p-8'
-                : 'object-cover object-center'
+                ? 'object-contain object-bottom'
+                : 'object-cover object-[center_20%]'
             }`}
             sizes="(max-width: 1024px) 100vw, 55vw"
-            priority={member.id === 'mehvora'}
+            priority={member.featured}
           />
         </div>
       </div>

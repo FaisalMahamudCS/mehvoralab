@@ -6,6 +6,7 @@ export type Project = {
   metrics: { label: string; value: string }[]
   tech: string[]
   industry: string
+  image: string
   featured?: boolean
   video?: string
   liveUrl?: string
@@ -30,6 +31,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['LangChain', 'LangGraph', 'NestJS', 'PostgreSQL', 'Python', 'AWS', 'Docker'],
     industry: 'Enterprise AI',
+    image: '/portfolio/enterprise-ai-assistant.jpg',
     featured: true,
   },
   {
@@ -50,6 +52,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Node.js', 'BullMQ', 'Redis', 'MongoDB', 'LangChain', 'Groq', 'Serper API'],
     industry: 'HR Tech',
+    image: '/portfolio/ai-recruitment-automation.jpg',
     featured: true,
   },
   {
@@ -70,6 +73,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Next.js', 'NestJS', 'PostgreSQL', 'MongoDB', 'LangChain', 'FastAPI', 'AWS'],
     industry: 'Agriculture',
+    image: '/portfolio/agrigate-marketplace.jpg',
     featured: true,
   },
   {
@@ -90,6 +94,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Next.js', 'LangChain', 'Strapi', 'AWS S3', 'CI/CD', 'Tailwind CSS'],
     industry: 'Agriculture',
+    image: '/portfolio/agrigate-network-website.jpg',
     video: '/portfolio/videos/agrigate-website.mp4',
   },
   {
@@ -110,6 +115,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Python', 'FastAPI', 'OpenCV', 'YOLO', 'PostgreSQL', 'AWS', 'Docker'],
     industry: 'Agriculture',
+    image: '/portfolio/poultry-ai-monitoring.jpg',
     featured: true,
   },
   {
@@ -130,6 +136,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['React.js', 'Node.js', 'PostgreSQL', 'Python', 'Docker', 'AWS', 'Socket.IO'],
     industry: 'Healthcare',
+    image: '/portfolio/twin-flow-ai.jpg',
   },
   {
     slug: 'muslim-bangla',
@@ -149,6 +156,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Node.js', 'Next.js', 'PostgreSQL', 'MySQL', 'AWS', 'Docker'],
     industry: 'Education',
+    image: '/portfolio/muslim-bangla.jpg',
   },
   {
     slug: 'melbourne-limolink',
@@ -168,6 +176,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Next.js', 'Node.js', 'MongoDB', 'PayPal', 'Strapi', 'AWS'],
     industry: 'Travel',
+    image: '/portfolio/melbourne-limolink.jpg',
   },
   {
     slug: 'ducorp-trading',
@@ -187,6 +196,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Next.js', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'AWS EC2', 'CloudFront', 'Nginx'],
     industry: 'Business',
+    image: '/portfolio/ducorp-trading.jpg',
     video: '/portfolio/videos/ducorp.mp4',
   },
   {
@@ -207,6 +217,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Django', 'React', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'],
     industry: 'Agriculture',
+    image: '/portfolio/agrigate-erp.jpg',
   },
   {
     slug: 'permisgo',
@@ -226,7 +237,9 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'Strapi', 'AWS'],
     industry: 'Education',
+    image: '/portfolio/permisgo.jpg',
   },
 ]
 
 export const PORTFOLIO_SHOWREEL = '/portfolio/videos/portfolio-showreel.mp4'
+export const PORTFOLIO_SHOWREEL_POSTER = '/portfolio/enterprise-ai-assistant.jpg'

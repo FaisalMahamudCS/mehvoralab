@@ -1,6 +1,7 @@
-import { PROJECTS, PORTFOLIO_SHOWREEL } from '@/constants/projects'
+import { PROJECTS, PORTFOLIO_SHOWREEL, PORTFOLIO_SHOWREEL_POSTER } from '@/constants/projects'
 import { createMetadata } from '@/lib/seo'
 import { PageHero } from '@/components/common/page-hero'
+import { ProjectCover } from '@/components/common/project-cover'
 import { ProjectVideo } from '@/components/common/project-video'
 import { FadeIn } from '@/components/animations/fade-in'
 
@@ -30,6 +31,7 @@ export default function PortfolioPage() {
             </h2>
             <ProjectVideo
               src={PORTFOLIO_SHOWREEL}
+              poster={PORTFOLIO_SHOWREEL_POSTER}
               title="Mehvora Labs portfolio showreel"
               className="mt-8"
             />
@@ -46,6 +48,7 @@ export default function PortfolioPage() {
                   id={project.slug}
                   className="scroll-mt-28 light-card overflow-hidden"
                 >
+                  <ProjectCover project={project} className="border-b border-slate-200/80" priority={i < 2} />
                   <div className="border-b border-slate-200/80 p-8">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="rounded-md bg-brand-blue/10 px-2 py-0.5 text-xs font-medium text-brand-cyan">
@@ -62,6 +65,7 @@ export default function PortfolioPage() {
                     {project.video && (
                       <ProjectVideo
                         src={project.video}
+                        poster={project.image}
                         title={project.title}
                         className="mt-6 max-w-3xl"
                       />

@@ -9,6 +9,7 @@ export const COMPANY = {
   email: 'faisal@mehvoralab.com',
   phone: '+880 1927 549653',
   address: 'Pragati Sarani, Vatara, Dhaka, Bangladesh',
+  calendly: 'https://calendly.com/faisal-mahamud-cs/30min',
   founded: 2022,
   social: {
     linkedin: 'https://www.linkedin.com/in/faisalmahamud',

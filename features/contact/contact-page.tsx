@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { Calendar, Mail, MapPin, Phone } from 'lucide-react'
 import { COMPANY } from '@/constants/company'
 import { FadeIn } from '@/components/animations/fade-in'
 import { SectionHeader } from '@/components/common/section-header'
@@ -164,11 +164,30 @@ export function ContactPageContent() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-8 text-center">
-                <p className="text-sm font-medium text-foreground">Schedule a Call</p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Calendly integration placeholder — connect your scheduling link here.
-                </p>
+              <div className="light-card overflow-hidden">
+                <div className="p-8 pb-4">
+                  <div className="flex items-center gap-3">
+                    <Calendar className="size-4 text-brand-cyan" />
+                    <h3 className="font-heading text-lg font-semibold">Schedule a Call</h3>
+                  </div>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    Book a free 30-minute discovery call. We&apos;ll map the fastest path from your idea to a production system.
+                  </p>
+                  <Button
+                    className="mt-4 h-11 rounded-xl bg-brand-blue px-6 text-white hover:bg-brand-blue/90"
+                    render={
+                      <a href={COMPANY.calendly} target="_blank" rel="noopener noreferrer" />
+                    }
+                  >
+                    Open calendar
+                  </Button>
+                </div>
+                <iframe
+                  src={`${COMPANY.calendly}?hide_gdpr_banner=1`}
+                  title="Book a 30-minute discovery call with Mehvora Labs"
+                  className="h-[680px] w-full border-0"
+                  loading="lazy"
+                />
               </div>
 
               <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50/80 p-8 text-center">

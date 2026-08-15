@@ -116,7 +116,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="h-12 gap-2 rounded-xl bg-brand-blue px-8 text-base font-medium text-white shadow-lg shadow-brand-blue/30 hover:bg-brand-blue/90"
-                render={<Link href="/contact" />}
+                render={<a href={COMPANY.calendly} target="_blank" rel="noopener noreferrer" />}
               >
                 Book a Free AI Audit
                 <ArrowRight className="size-4" />

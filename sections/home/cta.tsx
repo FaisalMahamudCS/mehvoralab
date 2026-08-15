@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
+import { COMPANY } from '@/constants/company'
 import { useGSAP, gsap } from '@/lib/gsap'
 import { Button } from '@/components/ui/button'
 import { MagneticButton } from '@/components/animations/motion-primitives'
@@ -60,7 +61,7 @@ export function CtaSection() {
               <Button
                 size="lg"
                 className="h-12 gap-2 rounded-xl bg-brand-blue px-8 text-white shadow-lg shadow-brand-blue/30 hover:bg-brand-blue/90"
-                render={<Link href="/contact" />}
+                render={<a href={COMPANY.calendly} target="_blank" rel="noopener noreferrer" />}
               >
                 Book a Free AI Audit
                 <ArrowRight className="size-4" />
