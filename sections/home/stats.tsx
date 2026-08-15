@@ -55,8 +55,8 @@ export function StatsSection() {
         <div className="stats-header">
           <SectionHeader
             eyebrow="By the Numbers"
-            title="Engineering excellence at scale"
-            description="Measurable impact across projects, deployments, and client satisfaction."
+            title="Numbers I can back up"
+            description="Every figure below maps to named projects and clients you can ask me about."
           />
         </div>
 

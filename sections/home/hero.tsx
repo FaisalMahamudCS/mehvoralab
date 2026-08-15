@@ -98,7 +98,7 @@ export function HeroSection() {
         <div className="mx-auto max-w-4xl text-center">
           <div className="hero-badge mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
             <span className="size-2 rounded-full bg-brand-label" />
-            Enterprise AI & Software Engineering
+            Applied AI Engineering — LLM Agents, RAG & Cloud
           </div>
 
           <TextReveal
@@ -118,7 +118,7 @@ export function HeroSection() {
                 className="h-12 gap-2 rounded-xl bg-brand-blue px-8 text-base font-medium text-white shadow-lg shadow-brand-blue/30 hover:bg-brand-blue/90"
                 render={<Link href="/contact" />}
               >
-                Book Discovery Call
+                Book a Free AI Audit
                 <ArrowRight className="size-4" />
               </Button>
             </MagneticButton>
@@ -137,12 +137,11 @@ export function HeroSection() {
         </div>
 
         <div className="mx-auto mt-20 max-w-4xl">
-          <div className="grid grid-cols-2 gap-4 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_4px_24px_rgba(15,23,42,0.06)] sm:grid-cols-4">
+          <div className="grid grid-cols-3 gap-4 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
             {[
-              { label: 'Projects', value: '50+' },
-              { label: 'Engineers', value: '15+' },
-              { label: 'Countries', value: '12+' },
-              { label: 'Uptime', value: '99.9%' },
+              { label: 'Shipped to Production', value: '12' },
+              { label: 'Years in Applied AI', value: '4.5+' },
+              { label: 'Client Companies', value: '8' },
             ].map((stat) => (
               <div key={stat.label} className="hero-stat text-center">
                 <p className="font-heading text-2xl font-bold text-foreground sm:text-3xl">{stat.value}</p>

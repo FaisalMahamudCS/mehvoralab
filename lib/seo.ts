@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { COMPANY } from '@/constants/company'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mehvoralabs.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.mehvoralab.com'
 
 export function createMetadata({
   title,

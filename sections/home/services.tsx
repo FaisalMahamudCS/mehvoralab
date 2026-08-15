@@ -53,9 +53,9 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="services-header">
           <SectionHeader
-            eyebrow="What We Do"
-            title="Premium software engineering services"
-            description="From AI agents to cloud infrastructure — we deliver end-to-end solutions that scale with your business."
+            eyebrow="What We Build"
+            title="AI systems built to run in production"
+            description="Not demos. We design, build, and deploy the agents, retrieval systems, and infrastructure that power real products — from architecture to launch."
           />
         </div>
 

@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
-import { cn } from '@/lib/utils'
 
 type FadeInProps = {
   children: React.ReactNode
@@ -48,45 +47,3 @@ export function FadeIn({
   )
 }
 
-type AnimatedCounterProps = {
-  value: number
-  suffix?: string
-  duration?: number
-  className?: string
-}
-
-/** @deprecated Prefer GsapCounter for scroll-driven counters */
-export function AnimatedCounter({ value, suffix = '', duration = 2, className }: AnimatedCounterProps) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const reducedMotion = useReducedMotion()
-  const [count, setCount] = useState(reducedMotion ? value : 0)
-
-  useEffect(() => {
-    if (!isInView || reducedMotion) {
-      setCount(value)
-      return
-    }
-
-    let start = 0
-    const step = value / (duration * 60)
-    const timer = setInterval(() => {
-      start += step
-      if (start >= value) {
-        setCount(value)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(start))
-      }
-    }, 1000 / 60)
-
-    return () => clearInterval(timer)
-  }, [isInView, value, duration, reducedMotion])
-
-  return (
-    <span ref={ref} className={cn('tabular-nums', className)}>
-      {count}
-      {suffix}
-    </span>
-  )
-}

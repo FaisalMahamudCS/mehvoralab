@@ -1,22 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { COMPANY } from '@/constants/company'
 import { FadeIn } from '@/components/animations/fade-in'
 import { SectionHeader } from '@/components/common/section-header'
 import { Button } from '@/components/ui/button'
-
-const contactSchema = z.object({
-  name: z.string().min(2, 'Name is required'),
-  email: z.string().email('Valid email required'),
-  company: z.string().optional(),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-})
-
-type ContactForm = z.infer<typeof contactSchema>
+import { contactSchema, type ContactForm } from '@/lib/contact-schema'
 
 export function ContactForm() {
   const {
@@ -28,10 +20,27 @@ export function ContactForm() {
     resolver: zodResolver(contactSchema),
   })
 
+  const [status, setStatus] = useState<'idle' | 'sent' | 'error'>('idle')
+
   const onSubmit = async (data: ContactForm) => {
-    console.log('Contact form:', data)
-    reset()
-    alert('Thank you! We will get back to you within 24 hours.')
+    setStatus('idle')
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        setStatus('error')
+        return
+      }
+
+      reset()
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -94,6 +103,22 @@ export function ContactForm() {
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
+
+      {status === 'sent' && (
+        <p role="status" className="text-sm text-emerald-600">
+          Thanks — your message reached my inbox. I reply within 24 hours.
+        </p>
+      )}
+
+      {status === 'error' && (
+        <p role="alert" className="text-sm text-red-600">
+          Something went wrong sending that. Please email me directly at{' '}
+          <a href={`mailto:${COMPANY.email}`} className="underline">
+            {COMPANY.email}
+          </a>
+          .
+        </p>
+      )}
     </form>
   )
 }

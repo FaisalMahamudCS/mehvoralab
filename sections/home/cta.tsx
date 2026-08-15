@@ -50,10 +50,10 @@ export function CtaSection() {
           <div className="cta-glow pointer-events-none absolute -bottom-20 -left-20 size-60 rounded-full bg-brand-label/10 blur-[80px]" />
 
           <h2 className="relative font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Ready to build something exceptional?
+            Have an AI idea stuck at the prototype stage?
           </h2>
           <p className="relative mx-auto mt-4 max-w-xl text-muted-foreground sm:text-lg">
-            Let&apos;s create your next digital product. Book a discovery call and we&apos;ll map out your path to production.
+            Tell us what you&apos;re building. On a free call we&apos;ll map the fastest path from idea to a production system your users can actually rely on.
           </p>
           <div className="relative mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <MagneticButton>
@@ -62,7 +62,7 @@ export function CtaSection() {
                 className="h-12 gap-2 rounded-xl bg-brand-blue px-8 text-white shadow-lg shadow-brand-blue/30 hover:bg-brand-blue/90"
                 render={<Link href="/contact" />}
               >
-                Book Discovery Call
+                Book a Free AI Audit
                 <ArrowRight className="size-4" />
               </Button>
             </MagneticButton>
